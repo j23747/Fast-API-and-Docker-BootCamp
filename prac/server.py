@@ -7,6 +7,13 @@ app = FastAPI()
 async def read_root():
     return { "Lux app": "Welcome to Lux app" } 
 
+
+
+@app.get("/about-us")
+
+def read_about_us():
+    return { "Lux app": "About us" }
+
 @app.post("/login/")
 async def login(username: str = Form(...), password: str = Form(...)):
     return {"username": username, "password": password}    
